@@ -1,0 +1,617 @@
+﻿/* --------------------------------------base ---------------------------------------*/
+
+.container-fluid { width:1024px !important; padding-left: 10px; padding-right: 10px; }
+
+/* columns of same height styles */
+.container-md-height { display:table; padding-left:0; padding-right:0; table-layout: fixed; }
+.row-md-height { display:table-row; }
+.col-md-height { display:table-cell; float:none; position: relative; }
+.subnav { margin-top: 48px; }
+.form label, .form .captcha>div:first-child { width: 35%; }
+.form>div>div, .form .Error, span.EditingFormErrorLabel, .form label + .checkbox-wrapper, .form .captcha table, .form input.FormButton[type="submit"] { margin-right: 20%; }
+.form .captcha>div:first-child { margin-right: 0; }
+.EditingFormControlNestedControl table { width:  auto; }
+
+/* --------------------------------------header ---------------------------------------*/
+
+/* page slider */
+.toggler.nav { display: none; }
+.sidebar.toggled { left: -100%; }
+.page-content.toggled, .page-content.toggled header { left: 0; }
+.page-content nav li { display: block; }
+header { max-width: 1280px; margin: 0 auto; position: static; border: 0; }
+.page-slider > .page-content { margin-top: auto; }
+
+.page-slider>.page-sidebar {
+    display:none;
+}
+.page-slider.toggled .page-content, .page-slider.toggled header {
+    left:0;
+}
+
+/* sticky header */
+header.sticky, .page-slider header.sticky { position: fixed; top: 0; left: 50%; max-width: 1280px; margin-left: -640px; height: 50px; z-index: 99; }
+main.sticky { margin-top: 88px; }
+header.sticky:before, header.sticky:after { content:""; position: absolute; left: 0; width: 100%; }
+header.sticky:before { height: 50px; background: #FFF; }
+header.sticky:after { top: 50px; height: 1px; background: #eee; }
+header.sticky.ncoitechniek:before {height:54px;}
+header.sticky.ncoitechniek:after {display:none;}
+header.sticky nav ul.nav-items li a, header.ncoitechniek nav ul.nav-items li a { padding: 11px 12px; border-bottom: 0; }
+header.sticky nav ul.nav-items li a { padding: 11px 26px;}
+header.ncoitechniek nav.ncoitechniek-subnav ul#topNavNcoiTechniek li a { padding: 37px 22px; }
+header.ncoitechniek nav.ncoitechniek-subnav .nav-items.ncoi-techniek a { padding: 33px 12px; }
+header.sticky ul.secondary { display: none; }
+header.sticky .search, header.ncoitechniek .search { top: 12px; }
+header.sticky .search input[type="text"],header.ncoitechniek .search input[type="text"] { height: 26px; line-height: 26px; }
+header.sticky .search input[type="submit"],header.ncoitechniek .search input[type="submit"] { height: 26px; background-position: 9px -1015px; }
+header.ncoitechniek a.logo, header.sticky a.logo { overflow: hidden; position: relative; width: 122px; }
+.searchBox { display: block; }
+header.ncoitechniek nav>ul.nav-items.ncoi { margin-right: 0; width: 58%; margin-left: 0; }
+header.ncoitechniek nav>ul.nav-items.ncoi li a { padding: 11px 26px;}
+header.sticky a.logo, header.ncoitechniek a.logo { height: 22px; margin-top: 15px; }
+header.sticky a.logo { height: 35px; margin-top: 10px; width: 122px; }
+header.ncoitechniek.sticky a.logo { margin-top: 15px;}
+header.ncoitechniek a.logo img { width: 125px; overflow: hidden; }
+header.sticky a.logo img { width: 60px; overflow: hidden; }
+header.sticky .search-results, header.ncoitechniek .search-results { top: 38px; }
+header.sticky nav>ul.nav-items, header.ncoitechniek nav>ul.nav-items { text-align: left; }
+header.sticky nav>ul.nav-items { width: auto;}
+.ncoitechniek-subnav .nav-items.ncoi-techniek { float: right; text-align: right; width: auto; margin-right: 32px; margin-left: 0; }
+.sticky .ncoitechniek-subnav .nav-items.ncoi-techniek { margin-right: 116px; }
+header.sticky nav>ul.courses, header.ncoitechniek nav>ul.courses { top: 50px; margin-left: -512px; }
+header.sticky nav ul.nav-items li a + ul, header.ncoitechniek nav ul.nav-items li a + ul { top: 50px; }
+header.sticky nav ul.nav-items li a + ul li a, header.ncoitechniek nav ul.nav-items li a + ul li a { padding: 6px 30px; }
+header.sticky nav .nav-items .nav-drop-down {top:50px;}
+
+/* nav */
+.form-master header nav ul, .form-master header .search { display:none; }
+header, .page-slider header { position: relative; }
+nav { font-size: 0.85em; }
+.page-content nav {
+    position:relative;
+}
+nav a.logo { margin-right: 0; margin-left: 12px; }
+.ncoitechniek nav a.logo img { display: none; visibility: hidden; }
+.ncoitechniek nav a.logo > span { display: block; font-size: 12px; font-weight: bold; color: #2A2A71; padding: 2px 0 0; }
+.page-slider .ncoitechniek-subnav a.logo {display:block;}
+nav ul, nav li { float: left; }
+nav ul.nav-items { margin: 0 0 0 40px; clear: none; text-align: left; }
+nav ul.nav-items li { display: inline-block; float: none; }
+nav ul.nav-items li a, .page-content nav li.course-toggler a { border: 0; transition: color 0.3s; background:none; display:block; color: #2A2A71; padding: 29px 26px; }
+nav ul.nav-items li.toggled > a, nav ul.nav-items li.HighLighted > a {text-decoration:none; font-weight:bold;}
+.ncoi.sticky nav ul.nav-items { margin-left: 9px;}
+nav ul.nav-items > li > a:hover{text-decoration:underline;}
+nav ul.nav-items li.toggled > a{text-decoration:none;}
+nav ul.nav-items li a + ul > li { display: block; float: left; }
+nav ul.nav-items li a + ul li a { padding: 6px 30px; }
+nav li a { border: 0; color: #2A2A71; }
+nav li a:hover, ul.courses ul li a:hover { background: none; text-decoration: underline; font-weight:normal; }
+nav ul.secondary { float: right; display: table; width: 320px; height: 100%; padding-bottom: 5px; }
+nav ul.secondary li { display: table-cell; float: none; padding-left: 20px; text-align: right; }
+nav ul.secondary li:first-child { padding-left: 0; text-align: left; }
+nav ul.secondary l:nth-child(2) { text-align: center; }
+nav ul.secondary li.tel { padding-left: 13px; position: relative; display: table-cell; padding-top: 4px; }
+nav ul.secondary li.tel:before { content: ""; position: absolute; left: 0; top: 15px; width: 10px; height: 10px; background: url(../../image/ncoi/sprite.png) no-repeat 0 -1300px; }
+nav ul.secondary li a { padding: 13px 0; }
+
+.ncoitechniek .sublogo:after { content: ''; display: block; position: relative; width: 1px; height: 50px; border-left: 1px solid #ddd; /* top: 45px; */ margin-top: -25px; left: 9px; /* clear: both; */ float: right; background: transparent; }
+.sticky.ncoitechniek .sublogo { padding-top: 9px; }
+
+
+@media (min-width: 1300px) {
+    nav ul.nav-items { margin-left: 144px; }
+    .ncoi.sticky nav ul.nav-items { margin-left: 113px;}
+    .ncoitechniek-subnav .nav-items.ncoi-techniek { margin-right: 171px; }
+    .sticky .ncoitechniek-subnav .nav-items.ncoi-techniek { margin-right: 198px; }
+    header.ncoitechniek nav>ul.nav-items.ncoi { margin-left: 105px; }
+}
+
+.nav-drop-down .col-md-8,
+.nav-drop-down .col-md-4 {
+    
+}
+.nav-drop-down .sub-items ul {
+    float: none;
+}
+.nav-drop-down .sub-items ul li {
+    display: block;
+    float: none;
+}
+.nav-drop-down .sub-items .row, .page-content .nav-drop-down .sub-items .row {
+    display:block;
+    margin: 0;
+    padding-bottom: 40px;
+}
+.course-toggler .nav-drop-down .sub-items .row { padding-bottom: 0; }
+.page-content nav li.course-toggler .nav-drop-down .sub-items ul li a,
+.page-content nav li .nav-drop-down .sub-items ul li a, header.ncoitechniek nav.ncoitechniek-subnav .nav-items.ncoi-techniek .sub-items a   {
+    font-size: 12px;
+    padding: 6px 20px;
+    color: #2A2A71;
+    line-height: 16px;
+}
+.nav-drop-down .col-md-8 {
+    border-left: 1px solid #eee;
+}
+.page-content nav li.course-toggler .nav-drop-down .col-md-4,
+.page-content nav li .nav-drop-down .col-md-4 {
+    float:left;
+    width:33.33333333%;
+    padding:0 10px;
+    padding-bottom:60px;
+}
+.page-content nav li.course-toggler .nav-drop-down .col-md-8,
+.page-content nav li .nav-drop-down .col-md-8 {
+    width:66.66666667%;
+    padding-bottom:60px;
+}
+
+.page-content nav li.course-toggler {
+    float:none;
+    display:inline-block;
+    margin-right:0;
+}
+.page-content nav li.course-toggler .nav-drop-down,
+.page-content nav li .nav-drop-down {
+    display:none;
+    text-align:left;
+    position: absolute;
+    width: 1024px;
+    left:50%;
+    margin-left: -512px;
+    background: #fff;
+    z-index: 1;
+    padding: 0;
+    border: 2px solid #eee;
+    margin-top: 0;
+}
+.page-content header.ncoitechniek nav li.toggled .nav-drop-down {
+    display: block;
+    z-index: 2;
+}
+.page-content header.ncoitechniek .ncoitechniek-subnav .nav-items li.toggled .nav-drop-down {
+    background: #eee;
+    border-top: 1px solid #FFFFFF;
+    z-index: 1;
+}
+.page-content header.ncoitechniek.sticky .ncoitechniek-subnav .nav-items li.toggled .nav-drop-down {
+    top: 54px;
+}
+
+.page-content nav li.course-toggler.toggled .nav-drop-down,
+.page-content nav li.toggled .nav-drop-down {
+    display:block;
+}
+.page-content nav li .nav-drop-down a.parentTitle,
+.page-content nav li.course-toggler .nav-drop-down a.parentTitle, header.ncoitechniek nav.ncoitechniek-subnav .nav-items.ncoi-techniek a.parentTitle.is-desktop {
+    padding: 30px;
+    font-weight: bold;
+    font-size: 1.3em;
+    text-align:left;
+    width:90%;
+    line-height: 100%; 
+}
+.page-content nav li .nav-drop-down a.parentTitle:hover,
+.page-content nav li.course-toggler .nav-drop-down a.parentTitle:hover {
+    font-weight:bold;
+}
+.page-content nav li.course-toggler .nav-drop-down .col-md-8 {
+    float:left;
+}
+.page-content .sub-items .col-md-6:first-child { 
+    padding-left: 10px;
+}
+.page-content .sub-items .col-md-6 { 
+    padding: 0;
+}
+.page-content .nav-drop-down .sub-items.active .row {
+    display: block;
+    position: static;
+    overflow-x: auto;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    background: none;
+    padding-top: 0;
+}
+.page-content nav li.course-toggler a {
+    font-size:inherit;
+}
+.page-content nav li.course-toggler .nav-drop-down ul li a:hover {
+    background: none;
+}
+
+  
+
+.course-slider { display: none; }
+
+/* Main navigation */
+
+.nav-drop-down .is-mobile, .nav-drop-down .is-tablet { display: none !important; }
+.nav-drop-down .is-desktop { display: block !important; }
+nav ul.nav-items .sub-list { float: none;}
+nav ul.nav-items .toggleContent > li { width: 33.333333333%; margin-bottom: 60px; padding-top: 73px; }
+nav ul.nav-items .toggleContent li:first-child li:first-child { position: absolute; top: 0; }
+nav ul.nav-items .sub-list li { display: list-item; }
+
+/* -------------------------------------Techniek Subnav--------------------------------- */
+
+.ncoitechniek-subnav { background-color: #eee; width: 100%; clear: both; position: relative; height: 96px; }
+.ncoitechniek-subnav ul.nav-items{width: 720px;}
+.ncoitechniek nav.ncoitechniek-subnav a.logo img { display: block; visibility: visible; }
+header .ncoitechniek-subnav a.logo { height: 74px; margin: 15px 0 5px 20px; }
+.ncoitechniek-subnav .secondary {width: 200px;}
+.ncoitechniek-subnav .secondary:before { content: ''; display: block; position: absolute; width: 1px; height: 50px; border-left: 1px solid #ddd; top: 45px; margin-top: -25px; left: -30px; background: transparent; }
+.ncoitechniek-subnav ul.secondary{position: relative; /* context for positioning pseudo element */ padding-top: 15px; width: 150px; display: block;}
+.ncoitechniek-subnav ul.secondary li, .ncoitechniek-subnav ul.secondary li.tel  { text-align:left; padding-left:0; display:block;}
+.ncoitechniek-subnav ul.secondary li.tel{padding-left: 13px;}
+.ncoitechniek-subnav ul.secondary li.tel::before {top:14px;}
+.ncoitechniek-subnav ul.secondary li a{padding: 5px 0;}
+
+.sticky .ncoitechniek-subnav { height: 55px; margin-top: -2px;}
+.ncoitechniek.sticky nav.ncoitechniek-subnav a.logo img { width: 100%; }
+.ncoitechniek.sticky nav.ncoitechniek-subnav .nav-items.ncoi-techniek a { padding: 12px;}
+.sticky.ncoitechniek .ncoitechniek-subnav a.logo { margin-top: 8px; width: 68px; margin-right: 8px; }
+header .ncoitechniek-subnav a.logo img { width: auto; }
+header.sticky .ncoitechniek-subnav ul.secondary { display: block; padding-top: 5px; }
+header.sticky .ncoitechniek-subnav ul.secondary  li {line-height:20px;}
+header.sticky .ncoitechniek-subnav ul.secondary li.tel::before { top: 10px; }
+header.sticky .ncoitechniek-subnav .secondary:before { margin-top: -43px; }
+
+/* search */
+.search { width: 320px; display: block; position: absolute; padding: 0; top: 39px; z-index: 1; }
+.toggle-search { display: none; }
+.search input[type="text"] { width: 100%; padding-right: 40px; height: 32px; }
+.search input[type="submit"] { right: 0; top: 0; height: 32px; width: 32px; background: #2A2A71 url(../../image/ncoi/sprite.png) no-repeat 9px -1012px; }
+input[type="search"]:focus + input[type="submit"], .search input[type="text"]:focus + input[type="submit"] { transition: .3s; background-color: black;}
+
+/* OUDE VERSIE Suggesties */
+.search-results { padding: 24px 32px; position: absolute; top: 48px; right: 0; border: 2px solid #eee; width: 650px; }
+.search-results:before, .search-results:after { content: ""; display: block; position: absolute; border: 10px solid transparent; right: 296px; top: -20px; }
+.search-results:before { border-bottom-color: #EEE; }
+.search-results:after { border-bottom-color: #FFF; border-width: 13px; margin-right: -3px; }
+.search-results>span, .search-results a.close { display: block; }
+.search-results>span { padding: 0 50px 0 0; font-size: 1.3em; font-weight: bold; text-align: left; }
+.search-results a.close { position: absolute; right: 32px; top: 21px; background: #00235d; width: 24px; height: 24px; display: block; overflow: auto; text-indent: -999em; }
+.search-results a.close:before { content:""; position: absolute; left: 50%; top: 50%; width: 9px; height: 9px; margin: -4px 0 0 -4px; background: url(../../image/ncoi/sprite.png) no-repeat 100% -500px; }
+#synoniemenlijst { padding: 12px 0; border-color: #818181; margin-top: 15px; margin-bottom: 26px; }
+#synoniemenlijst a { padding: 15px 8px; }
+
+/* NIEUWE VERSIE Suggesties*/
+/*
+.search-results { padding: 24px 32px; position: absolute; top: 48px; right: 0; width: 650px; }
+.search-results:before, .search-results:after { content: ""; display: block; position: absolute; border: 10px solid transparent; right: 125px; top: -20px; }
+.search-results:before { border-bottom-color: #EEE; }
+.search-results:after { border-bottom-color: #FFF; border-width: 13px; margin-right: -3px; }
+.search-results>span { display: block; }
+.search-results>span { padding: 0 50px 0 0; font-weight: bold; text-align: left; }
+#synoniemenlijst { padding: 12px 0; border-color: #818181; margin-top: 15px; margin-bottom: 26px; }
+#synoniemenlijst a { padding: 15px 8px; }
+*/
+
+/* zoek suggesties */
+.search .search-results {
+   max-width: 251px;
+}
+.search-results a.close { right: 5px; top: 5px; }
+@media all and (min-width: 1295px) {
+    .search .search-results {
+        max-width: 320px;
+    }
+    .search-results:before, .search-results:after {
+        right: 160px;
+    }
+}
+
+/* --------------------------------------footer ---------------------------------------*/
+
+footer { max-width: 1280px; margin: 0 auto; }
+.doormat { padding: 40px 0; }
+.doormat ul { -moz-column-count: 2; -webkit-column-count: 2; column-count: 2; }
+footer .contact-footer { padding-right: 85px; }
+.newsletter { padding: 0; }
+.newsletter:after { content:""; clear: both; display: block; }
+.newsletter .wrapper { width: 1020px; margin: 0 auto; }
+.newsletter .wrapper > div { float: right; width: 620px; padding: 15px 0 0 0; }
+.newsletter .wrapper > div:first-child { border: 0; float: left; width: 33%; }
+.newsletter label { width: auto; }
+.newsletter .form { float: right; }
+.subscribe input[type="text"] { width: 280px; }
+footer ul.social li:first-child { margin-left: 5px; }
+.subscribe span[id*="lblError"] { margin-left: -284px; }
+
+/* --------------------------------------subnav ---------------------------------------*/
+
+.home .subnav > div { width: 66%; }
+.home .subnav > div:first-child { width: 33%; }
+.subnav > div:nth-child(2) ul { -moz-column-count: 2; -webkit-column-count: 2; column-count: 2; }
+.subnav h4, .subnav div:first-child h4 { font-size: 1.4em; }
+
+/* --------------------------------------unexpandable-subnav ---------------------------------------*/
+.unexpandable-subnav:before { content: ""; position: absolute; display: block; left: 50%; top: -18px; margin-left: -18px; border: 9px solid #000; border-color: transparent transparent #006c98 transparent; }
+.unexpandable-subnav ul {-moz-column-count: 3; -webkit-column-count: 3; column-count: 3; height:auto; padding-bottom:32px;}
+.unexpandable-subnav h4 {padding:28px 35px 28px 32px; cursor:default;}
+.unexpandable-subnav h4:after  { content: ""; background:none; width: 0; height: 0; display: none; position:absolute; }
+
+/* --------------------------------------slider ---------------------------------------*/
+
+section.slider { position: relative; margin-left: -138px; margin-right: -138px; overflow: hidden; }
+section.slider:before { left: 138px; right: 138px; }
+section.slider>div.tablet { display: none; }
+section.slider>div.desktop { display: block; }
+.slider article { padding: 96px; }
+ol.flex-control-paging { bottom: 66px; }
+ul.flex-direction-nav { display: block; position: absolute; top: 50%; margin-top: -16px; margin: -15px 0 0 0; padding: 0; width: 100%; }
+ul.flex-direction-nav li { position: absolute; right: 0; display: block; }
+ul.flex-direction-nav li:first-child { right: auto; left: 0; }
+.flex-prev, .next, .flex-next { text-indent: -999em; }
+ul.slides .btn { height: 48px; line-height: 48px; }
+
+/* --------------------------------------teasers ---------------------------------------*/
+
+.teaser.testimonial > div { min-height: 284px; }
+
+.teaser-wrapper-xs, .teaser-wrapper-sm { display:none; }
+.teaser-wrapper-md { display:block; }
+.teaser-wrapper-md.bordered { padding:32px; border:8px solid #eee; position: relative; }
+.teaser-wrapper-md.bordered .brochure img {margin-bottom: 26px;}
+.teaser-wrapper-md.connected { border:8px solid #eee; overflow: hidden; }
+.teaser-wrapper-md.connected > section { padding:32px; float:left; width:50%; position:relative; }
+.teaser-wrapper-md.connected > section:first-child:before  { position: absolute; content: ""; height: 300%; right: 0; top: -32px; border-right: 8px solid #eee; }
+
+.teaser-wrapper-md.apart { position:relative; overflow:hidden; }
+.teaser-wrapper-md.apart > section:first-child, .teaser-wrapper-md.apart > div:first-child { margin-right:20px; }
+.teaser-wrapper-md.apart > section, .teaser-wrapper-md.apart > div { position:relative; float:left; width:49%; height:284px; }
+
+.teaser.news, artikel.news { float: left; height: 284px; width: 49%; margin-right: 20px; position:relative; }
+.artikel.news li { line-height: 18px; margin-bottom: 10px; padding-left: 15px; }
+.artikel.news ul { padding-left: 0; }
+.teaser.incompany   { margin-right: 0;}
+.teaser.incompany > div { min-height: 284px; padding-right:116px; }
+.teaser.contact  { padding-left:130px; }
+.teaser.contact .content    { width: inherit; }
+.teaser.contact img  { height:100%; }
+.teaser.brochure img { bottom: -30px; }
+.teaser.erkendekwaliteit .col-xs-4.col-md-2 a, .teaser.erkendekwaliteit h3  { margin-bottom: 48px; }
+.teaser.recentblogs    { float: left; height: 284px; width: 49%; margin-right: 20px;  }
+
+/* crownjewels */
+.crownjewels:after             { content:""; clear: both; display: block; }
+/*.jewel                         {  float: left; width: 32%; margin-right: 20px; }*/
+.jewel a                       { height: 280px; margin-bottom: 0; }
+.jewel span, .jewel h2         { float: none; }
+.jewel h2                      { font-size: 2em; border-bottom: 2px solid #e0e1e2; padding-bottom: 24px;}
+.jewel span                    { font-size: 1.1em; margin-bottom: 0; }
+.jewel p                       { width: 100%; }
+.jewel.darkblue                { margin-right: 0; }
+
+/* Tabs */
+.tabs > ul { display:block; }
+.tabs > ul li { display:block; float:left; width: 13.5em; }
+.tabs-content .filters > div { width: 270px; float: left; }
+.tabs-content .filters .sod_select { width: 200px; }
+
+/* --------------------------------------lightbox ---------------------------------------*/
+
+.lightbox, .lightbox>.bg { position: fixed; width: 100%; height: 100%; left: 0; top: 0; z-index: 99; }
+.lightbox { display: table; }
+.lightbox>.bg { background: #000; opacity: 0.5; }
+.lightbox > div { display: table-cell; text-align: center; vertical-align: middle; position: relative; z-index: 100; height:100%; }
+.lightbox div.content { display:table; padding: 30px; background: #FFF; position: relative; width: 760px; height: 90%; min-height: 600px; margin: 0 auto; box-shadow: 0 0 10px rgba(0,0,0,0.3); border: 8px solid #eee; }
+.lightbox div.content.nested-content { height: auto; min-height: 0; } 
+.lightbox span.close { position: absolute; right: 8px; top: 8px; width: 40px; height: 40px; display: block; background: #eee url(../../image/ncoi/sprite.png) no-repeat 18px -400px; cursor: pointer; }
+.lightbox iframe { border: 0;  outline: none; position: absolute; top: 48px; left: 30px; width: 722px; height: 90%; min-height: 540px; display: none; }
+.lightbox iframe.loaded { display: block; }
+.mobile-lightbox-header, .brochure-request .buttons.stap2{ background-color:white; margin:0; padding-left: 0; padding-right:0; height:0; text-align:inherit;}
+.brochure-request.sticky .form .stap2 input.FormButton[type="submit"] { margin-right: 20%;}
+
+@media(-webkit-min-device-pixel-ratio: 1)
+{ 
+    .lightbox span.close {top:0; right:0;} 
+    .lightbox iframe {left:22px; top:40px;} 
+}
+
+/* --------------------------------------banner ---------------------------------------*/
+
+.banner { margin: 0 -138px -77px -138px; }
+.banner .jumbotron { padding-top: 86px; margin: 0 !important; }
+.container .jumbotron, .container-fluid .jumbotron .btn { margin-top: 38px;  }
+.intro { background-color: #fff; padding: 40px 62px 0 62px; }
+
+/* --------------------------------------content menu columns ---------------------------------------*/
+
+.content-menu-container { display: table; table-layout: fixed; border: 8px solid #EEE; padding: 0; }
+.content-menu-container>div { display: table-cell; vertical-align: top; width: 25%; background: #eee; padding: 16px; }
+.content-menu-container .subnav>div>ul { -moz-column-count: 1; -webkit-column-count: 1; column-count: 1; }
+.content-menu-container>div:first-child { width: 75%; padding: 32px; background: #FFF; }
+.content-menu-container .subnav { position: static; }
+.content-menu-container .subnav:before { display: none; }
+.content-menu-container .subnav h4:before { background-color: #fff; left: -16px; right: -16px; }
+.content-menu-container .subnav div:first-child h4 { color: #383737; padding: 16px 0 24px 0; font-weight: normal; font-size: 1.7em; }
+.content-menu-container .subnav .mobile-toggle:after { display: none; }
+.content-menu-container .subnav .mobile-toggle:hover { background: none; cursor: auto; }
+.content-menu-container .subnav ul { display: block; padding: 0; }
+.content-menu-container .subnav ul a { color: #006d99; padding: 15px 0; border-top: 1px solid #fff; line-height: 1.5; position: relative; }
+.content-menu-container .subnav ul li:first-child a { border: 0; }
+.content-menu-container .subnav ul ul { font-size: 1em; margin: -10px 0 10px 0; }
+.content-menu-container .subnav ul ul a { padding: 10px 16px; border: 0; margin-left: 0; }
+.content-menu-container .subnav .has-child>a:after { content: ""; display: block; position: absolute; right: 0; top: 50%; width: 12px; height: 6px; margin-top: -3px; background: url(../../image/ncoi/sprite.png) no-repeat 100% -648px; overflow: hidden; }
+.content-menu-container .subnav .has-child.HighLighted>a:after { background-position: 100% -678px; }
+.content-menu-container .subnav li.redirect { border-top: 1px solid #fff; }
+.content-menu-container .subnav .redirect a { background: #FFF; padding: 10px 32px 10px 16px; position: relative; margin-top: 16px; }
+.content-menu-container .subnav .redirect a:after { content: ""; position: absolute; right: 16px; top: 50%; margin-top: -5px; width: 6px; height: 10px; background: url(../../image/ncoi/sprite.png) no-repeat 100% -770px; }
+.content-menu-container .subnav li li.redirect  { border: 0; }
+.content-menu-container .subnav li li.redirect a { margin-top: 0; }
+.content-menu-container .subnav ul a:before { display: none; }
+
+/* -------------------------------------- Contentpagina widgets ---------------------------------------*/
+
+.content-menu-container .side-widgets { padding: 38px 24px; }
+.content-menu-container .side-widgets h4 { margin-bottom: 24px;}
+.content-menu-container .side-widgets > div:first-child { margin-bottom: 32px; padding-bottom: 32px; border-bottom: 1px solid white; }
+.side-widgets .tel, .side-widgets .fax, .side-widgets .mail {background-image: url(../../image/ncoi/sprite.png); padding: 0 0 0 2.3em; background-repeat: no-repeat; margin-bottom: 24px; }
+.side-widgets .tel { background-position: left -1687px; }
+.side-widgets .fax { background-position: left -1623px; }
+.side-widgets .mail { background-position: left -1497px; }
+.contactform { margin-top: 32px;}
+
+/* --------------------------------------backlink ---------------------------------------*/
+
+.backlink { margin:0 0 0 -138px; }
+
+/* --------------------------------------ELASTIC SEARCH ---------------------------------------*/
+
+.elastic-search h1,
+.elastic-search ul.breadcrumb { display: block; }
+.elasticSearchBox { display: none; }
+.elastic-search .search-results { display: none !important; }
+.elastic-search-title + .container-fluid { padding-right: 30px; }
+.elastic-search .container-fluid .search-container > .row { margin-left: 0; margin-right: 0; }
+
+/* -------------------------------------- opleidingspagina ---------------------------------------*/
+
+.course .info > div { float: left; }
+.course .info .summary { width:76%; display:inline-block !important; border-right:8px solid #eee; min-height:290px; }
+.course .info .actions { width: 24%; display:inline-block !important; padding:48px 32px 0 32px; }
+.course .info .actions ul { list-style: none; margin: 0; padding: 0; }
+.course .info .actions li:first-child { margin-top: 0; }
+.course .info .actions li { margin-bottom: 24px; }
+.course .info .actions li > a, .course .info .actions li > span { padding: 0 0 0 2.3em; color: #006c98; background-image: url(../../image/ncoi/sprite.png); background-repeat: no-repeat; }
+.course .info .actions li .mail { background-position: left -1497px; }
+.course .info .actions li .download { background-position: left -1560px; }
+.course .info .actions li .studiegids { display: none; } 
+.course .info .actions li .print { background-position: left -1626px; }
+.course .info .actions li .tel { background-position: left -1691px; font-weight:bold; color:#000; display:inline; }
+.course .info .buttons { margin-bottom:0; }
+.course .info .buttons.bottom { width:23%; margin:0; border:0; padding:58px 32px 0 32px; }
+.course .info .buttons.bottom .btn1, .course .info .buttons.bottom .btn2 { width:170px; text-align:center; padding:0; margin-bottom:16px; }
+
+.course .info.bottom .summary { padding:0 0 0 32px; margin:32px 0 32px 0; border-right:2px solid #eee; min-height:140px; }
+.course .info.bottom .summary > div { float:left; display:inline-block; margin-right:16px; }
+.course .info.bottom .summary .summary-courselevel { width:152px; }
+.course .info.bottom .summary .courselevel { position: relative; width: 100%; }
+.course .info.bottom .summary .summary-duration { width:80px; }
+.course .info.bottom .summary .summary-coursetype { width:229px; }
+.course .info.bottom .summary .summary-price { width:153px; }
+.course .info.bottom .summary > div > span { display:inline; }
+.course .info.bottom .summary > div > span:first-child { display:block; }
+
+.course .desktopteasers { display:block; overflow: hidden; display:table; width:100%; }
+.course .desktopteasers > section.teaser-wrapper { display:table-cell; width:50%; }
+.in-lightbox.popup-planning a.back { display: none; }
+.filters span.tooltip dfn { width: 26em; right: auto; left: 50%; margin: 0 0 0 -13em; }
+.filters span.tooltip dfn:before, .filters span.tooltip dfn:after { left: 50%; right: auto; margin-left: -11px; }
+.filters span.tooltip dfn:before  { margin: 0 0 0 -12px; }
+
+/* Seasonswitch */
+
+.course .info .summary .season { margin: 34px 0 0 0; }
+
+/* opleidings interesse formulier */
+
+.brochure-request .opleidings-interesse-formulier .form input[type="submit"].FormButton { margin-top: 24px; width: 25%; margin: 0; }
+
+
+/* -------------------------------------- various ---------------------------------------------*/
+
+.segment .desktopteasers .teaser-wrapper.contact { padding:0 0 20px 0; overflow:hidden; }
+.segment .desktopteasers .teaser.contact { height:auto; width:auto; margin:0; border:0; padding-top:28px; }
+.segment .desktopteasers .teaser.contact p:first-child { padding-right:0; }
+
+.wizard { margin-top: 0;}
+.wizard-wrapper { width: 1000px; padding: 24px 0 48px 0; }
+.wizard ul.options { -webkit-column-count:3; -moz-column-count:3; column-count:3; }
+.wizard li.not-visible { display: block; height: 47px; visibility: hidden;}
+
+section.error500.contact, section.error500.incompany  { float: left; height: 284px; width: 49%; min-height: 284px;}
+
+/* -------------------------------------- Brochureaanvraag ---------------------------------------------*/
+ul.steps + .form h2 { padding: 0; }
+ul.steps li { width: 23%; }
+.aanvragen .form fieldset, .aanvragen .form fieldset.buttons { padding: 0; width: 100%; }
+.aanvragen fieldset.brochures { padding:0 !important; }
+.brochures .brochure { width: 19%; margin: 0 1.25% 1.25% 0; }
+.brochures .brochure:nth-child(3n+1) { margin-right: 1.25%; }
+.brochures .brochure:nth-child(5n+1) { margin-right: 0; }
+
+.request-new-brochure-form .brochure-groups .brochures-list li .brochure-content .brochure-image {
+    margin: 0 0 0 20px;
+}
+.request-new-brochure-form .brochure-groups .brochures-list li .brochure-content .brochure-description {
+    float: left;
+    width: 75%;
+    margin-left: 15px;
+}
+
+/* ---------------------------------Voorlichtingsbijeenkomsten aanvraag --------------------------------*/
+
+.wrapper.voorlichtingsbijeenkomst { width: 960px; margin: 0 auto; padding: 0;}
+
+/* -------------------------------------- Segment ---------------------------------------*/
+
+.segment .subnav h4 { font-size: 1.286em; }
+
+.segment .actueleartikelen hr {
+    margin: 4px 0px 4px 0px;
+}
+
+/* -------------------------------------- Testimonial ---------------------------------------*/
+
+.testimonial .summary div { margin-bottom: 48px; }
+.page.testimonial .text img { border-right: 1px solid #eee; float: left; width: auto; margin: 0 48px 0 0; padding: 28px 48px 28px 0;  }
+.page.testimonial .text     { padding: 32px 48px; }
+.page.testimonial .text h4 { margin: 0 0 18px 0; }
+.page.testimonial a.linkedin { margin-top: 3px;}
+
+/* -------------------------------------- Kroonjuwelen ---------------------------------------*/
+
+.crownjewel-listing .subnav ul li { width: 33.33333%;}
+.kroonjuweel-hbo .content-menu-container .subnav div:first-child h4 { color: #006c98; }
+.kroonjuweel-mbo .content-menu-container .subnav div:first-child h4, .kroonjuweel-mbo .content-menu-container .subnav ul a { color: #7c5098; }
+.kroonjuweel-university .content-menu-container .subnav div:first-child h4, .kroonjuweel-university .content-menu-container .subnav ul a { color: #00235d; }
+.kroonjuweel-mbo .content-menu-container .subnav .has-child.HighLighted>a:after { background-position: right -880px;}
+.kroonjuweel-mbo .content-menu-container .subnav .has-child>a:after { background-position: right -830px; }
+.kroonjuweel-mbo .content-menu-container .subnav .redirect a:after { background-position: right -1529px;}
+.kroonjuweel-university .content-menu-container .subnav .has-child>a:after { background-position: right -926px; }
+.kroonjuweel-university .content-menu-container .subnav .has-child.HighLighted>a:after { background-position: right -976px;}
+.kroonjuweel-university .content-menu-container .subnav .redirect a:after { background-position: right -1589px;}
+
+/* -------------------------------------- Voorlichtingsbijeenkomsten ---------------------------------------*/
+
+.informative-meeting .contenttable td:nth-child(3) { display: table-cell; }
+.btn.vca { min-width: 70%; line-height: 50px; padding: 0;}
+
+/* ------------------------------------------ NCOI Techniek Nieuwsbrief ---------------------------------------------- */
+
+.nieuwsbrief-techniek-second { width: 33%; }
+.nieuwsbrief-techniek-first { width: 67%; }
+.nieuwsbrief-techniek img { right: -24px; top: auto; }
+
+/* --------------------------------------small desktop screen ---------------------------------------*/
+
+@media (max-width: 1300px)
+{
+    header, footer, .newsletter .wrapper { width: 1004px; }
+    header.sticky, .page-slider header.sticky { width: 1004px; margin-left: -502px; }
+    .newsletter .wrapper { padding: 0 10px; }
+    header nav { float: left; width: 75%;} 
+    nav ul.secondary,
+    header.sticky .ncoitechniek-subnav ul.secondary { display: none; }
+    .search { width: 25%; top: 27px;   }
+    .ncoitechniek .search { margin-top: 0;}
+    header.sticky .search { margin-top: 0; }
+    .banner, section.slider { margin-left: 0; margin-right: 0; }
+    section.title { margin-left:32px; margin-right: 32px; }
+    .backlink { margin:0; }
+    footer .contact-footer { padding-left: 10px; }
+    header.ncoitechniek nav>ul.nav-items.ncoi { width: 73%;}
+    .page-content nav li.course-toggler .nav-drop-down, .page-content nav li .nav-drop-down {
+        left:68%;
+    }
+    .page-content header.ncoitechniek .ncoitechniek-subnav .nav-items li.toggled .nav-drop-down {
+        left: 51%;
+        width: 1004px;
+    }
+}
