@@ -45,6 +45,12 @@ requirejs.config({
         "hogan": {
             exports: "Hogan"
         },
+        "jquery.flexslider":{
+            deps: ["jquery"]
+        },
+        "ncoi.elasticsearch":{
+            deps: ["jquery"]
+        },
         "bedrijvenzoeker":{
             deps: ["jquery"],
             exports: "Bedrijvenzoeker"

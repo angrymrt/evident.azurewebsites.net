@@ -1,11 +1,11 @@
-define(["jquery", "knockout", "knockout.mapping", "knockout.validation", "knockout.jqautocomplete",
+define(["jquery",
     "jquery.ui", "moment", "jquery.selectordie", "underscore", "bloodhound",
     "bedrijvenzoeker", "postcodezoeker", "jquery.flexslider",
     "jquery.scrollto", "jquery.ncoiscrolltolink", "ncoi.elasticsearch",
     "hogan", "jquery.colormatrix", "ncoiresponsivecoststable",
     "currentmedia", "phswap", "mmteaser", "querystringgrabber",
     "jquery.shorten", "bootstrap.tab"]
-    , function ($, ko, km, kv, kjqauto, jqui, moment, sod, _,
+    , function ($, jqui, moment, sod, _,
         Bloodhound, Bedrijvenzoeker, Postcodezoeker,
         jqflexslider, jqscrollto, jqncoiscrollto,
         ncoielasticsearch, Hogan, jquerycolormatrix,
@@ -1498,18 +1498,21 @@ define(["jquery", "knockout", "knockout.mapping", "knockout.validation", "knocko
             if ($('.wizard').length < 1) return;
             $('.wizard').hide();
             $('.home .jumbotron .btn, .vca-planner .btn.vca ').click(function () {
-                $('.wizard').fadeIn("fast", function () {
-                    //If page isn't at top of window: scroll to top of screen
-                    $("html, body").animate({
-                        scrollTop: 0
-                    }, 300);
-                    if (!$('in-cmsdesk').length < 1) {
-                        checkProgress();
-                        activateClose();
-                    }
-                    moveWizard();
-
-                });
+                require(["knockout", "knockout.mapping", "knockout.validation", "knockout.jqautocomplete"],
+                        function(){
+                            $('.wizard').fadeIn("fast", function () {
+                                //If page isn't at top of window: scroll to top of screen
+                                $("html, body").animate({
+                                    scrollTop: 0
+                                }, 300);
+                                if (!$('in-cmsdesk').length < 1) {
+                                    checkProgress();
+                                    activateClose();
+                                }
+                                moveWizard();
+            
+                            });
+                        });
             });
 
             function moveWizard() {
