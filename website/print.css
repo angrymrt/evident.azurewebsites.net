@@ -1,0 +1,7 @@
+@import url(../print.css);
+
+.edu-list a { text-decoration:none; }
+
+.section.faq,
+.mobile-contact
+{ display:none; }

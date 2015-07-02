@@ -1,16 +1,47 @@
 define(["jquery",
-    "jquery.ui", "moment", "jquery.selectordie", "underscore", "bloodhound",
-    "bedrijvenzoeker", "postcodezoeker", "jquery.flexslider",
-    "jquery.scrollto", "jquery.ncoiscrolltolink", "ncoi.elasticsearch",
-    "hogan", "jquery.colormatrix", "ncoiresponsivecoststable",
-    "currentmedia", "phswap", "mmteaser", "querystringgrabber",
-    "jquery.shorten", "bootstrap.tab"]
-    , function ($, jqui, moment, sod, _,
-        Bloodhound, Bedrijvenzoeker, Postcodezoeker,
-        jqflexslider, jqscrollto, jqncoiscrollto,
-        ncoielasticsearch, Hogan, jquerycolormatrix,
-        ncoiresponsivecoststable, currentmedia, phswap,
-        mmteaser, queryStringGrabber, jqshorten, bootstraptab) {
+    //"jquery.ui", 
+    //"moment", 
+    //"jquery.selectordie", 
+    "underscore", 
+    //"bloodhound",
+    //"bedrijvenzoeker", 
+    //"postcodezoeker", 
+    "jquery.flexslider",
+    //"jquery.scrollto", 
+    //"jquery.ncoiscrolltolink", 
+    //"ncoi.elasticsearch",
+    //"hogan", 
+    //"jquery.colormatrix", 
+    //"ncoiresponsivecoststable",
+    "currentmedia", 
+    "phswap", 
+    "mmteaser", 
+    "querystringgrabber",
+    //"jquery.shorten", 
+    //"bootstrap.tab",
+    ]
+    , function ($, 
+        //jqui, 
+        //moment, 
+        //sod, 
+        _,
+        //Bloodhound, 
+        //Bedrijvenzoeker, 
+        //Postcodezoeker,
+        jqflexslider, 
+        //jqscrollto, 
+        //jqncoiscrollto,
+        //ncoielasticsearch, 
+        //Hogan, 
+        //jquerycolormatrix,
+        //ncoiresponsivecoststable, 
+        currentmedia, 
+        phswap,
+        mmteaser, 
+        queryStringGrabber 
+        //jqshorten, 
+        //bootstraptab
+        ) {
 
         var jQuery = $;
 
@@ -367,7 +398,7 @@ define(["jquery",
 
         function initphswap() {
 
-            if (Modernizr.mq('only all') ? true : false) {
+            if (Modernizr.mq('only all')) {
                 window.currentmedia.setMedia();
                 mmteaser.mmSwitch();
             }
@@ -435,9 +466,13 @@ define(["jquery",
         }
 
         function transformCostTable() {
-            if ($('#kostenspecificatie table').length < 1) return;
-            // transform table 'kostenspecificatie'
-            if (currentmedia.isMobile) { $('#kostenspecificatie table').ncoiResponsiveCostsTable().hide(); }
+            if ($('#kostenspecificatie table').length > 0) {
+                console.log("lazy loading: ncoiresponsivecoststable");
+                require(["ncoiresponsivecoststable"], function(){
+                    // transform table 'kostenspecificatie'
+                    if (currentmedia.isMobile) { $('#kostenspecificatie table').ncoiResponsiveCostsTable().hide(); }
+                });
+            }
         }
 
         function tweakHeaderString() {
@@ -1220,7 +1255,12 @@ define(["jquery",
 
         function prettyForms() {
             // selects
-            $('select').selectOrDie();
+            if($("select").length > 0){
+                console.log("lazy loading: jquery.selectordie");
+                require(["jquery.selectordie"], function() {
+                    $('select').selectOrDie();
+                });
+            }
 
             if ($('.form').length < 1) return;
     
@@ -1322,6 +1362,7 @@ define(["jquery",
                 }
             });
 
+            
             $('section.slider>div').flexslider(
                 {
                     animation: 'slide',
@@ -1352,11 +1393,17 @@ define(["jquery",
             // class. This class indicates that the page is opened in the Page tab
             // of the CMS Desk.
             if ($('.in-cmsdesk').length < 1) {
-                $(".segment .summary > div, .vca-planner .summary > div").shorten({
-                    moreText: 'Lees meer',
-                    lessText: 'Lees minder',
-                    showChars: '250'
-                });
+                var $toShorten = $(".segment .summary > div, .vca-planner .summary > div");
+                if($toShorten.length > 0) {
+                    console.log("lazy loading: jquery.shorten");
+                    require(["jquery.shorten"], function(){
+                        $(".segment .summary > div, .vca-planner .summary > div").shorten({
+                            moreText: 'Lees meer',
+                            lessText: 'Lees minder',
+                            showChars: '250'
+                        });
+                    });
+                }
             }
             $('.morelink').click(function () {
                 if ($('.allcontent').css('display') == 'block') {
@@ -1498,6 +1545,7 @@ define(["jquery",
             if ($('.wizard').length < 1) return;
             $('.wizard').hide();
             $('.home .jumbotron .btn, .vca-planner .btn.vca ').click(function () {
+                console.log("lazy loading: knockout+");
                 require(["knockout", "knockout.mapping", "knockout.validation", "knockout.jqautocomplete"],
                         function(){
                             $('.wizard').fadeIn("fast", function () {
@@ -1623,12 +1671,12 @@ define(["jquery",
             }*/
 
             // startmomentenlisting opleidingspagina Desktop
-            $smlTrigger = $('.startmomenten-listing h3');
+            var $smlTrigger = $('.startmomenten-listing h3');
             $smlTrigger.on('click', function () {
                 $(this).toggleClass('open').next('.results-container').toggle();
             });
             // startmomentenlisting opleidingspagina Mobile
-            $smlTriggerM = $('.results-container h3');
+            var $smlTriggerM = $('.results-container h3');
             $smlTriggerM.on('click', function () {
                 $(this).nextAll('.course-block').toggle();
                 $(this).toggleClass('open');
@@ -1648,7 +1696,7 @@ define(["jquery",
             $('.search-container .aside.left > div > label.open').next('div').show();
             //toggle on label click
             $('.search-container .aside.left > div > label').on('click', function () {
-                $this = $(this);
+                var $this = $(this);
                 if ($this.hasClass('open')) {
                     $this.removeClass('open').next('div').slideUp();
                 } else {
@@ -1695,7 +1743,7 @@ define(["jquery",
                         if (input.val() == input.attr('placeholder')) {
                             input.val('');
                         }
-                    })
+                    });
                 });
             }
         }
@@ -1728,10 +1776,14 @@ define(["jquery",
         /* -------------------------- crossbrowser grayscale images  ------------------------- */
 
         function imgGrayscale() {
-            $imgs = $(".teaser.erkendekwaliteit a > img");
-            if ($imgs.length == 0) return;
-            // apply plugin
-            $imgs.colorMatrix();
+            var $imgs = $(".teaser.erkendekwaliteit a > img");
+            if($imgs.length > 0){
+                console.log("lazy loading: jquery.colormatrix");
+                require(["jquery.colormatrix"], function(){
+                    // apply plugin
+                    $imgs.colorMatrix();
+                });
+            }
         }
 
 
@@ -1741,7 +1793,7 @@ define(["jquery",
 
             var ElasticSearch = (function () {
                 // Declare variables
-                $search = undefined;
+                var $search = undefined;
                 var targetSelector = undefined,
                     preselectedFacets,
                     count = function (update) {
@@ -1774,7 +1826,7 @@ define(["jquery",
 
                 function search() {
                     // If #divDataAttributes exists
-                    $div = $("#divDataAttributes");
+                    var $div = $("#divDataAttributes");
                     if ($div.length <= 0) return;
                     // Get facets to apply
                     var facets = $div.data("facets-to-apply");
@@ -1805,8 +1857,6 @@ define(["jquery",
 
                 // Cleanup data
                 function cleanupData(data) {
-                    // Setup duur array
-                    var duurArray = [];
                     // Manipulate data
                     $.map(data.Hits, function (Hit) {
                         // If data is grouped
@@ -1818,7 +1868,7 @@ define(["jquery",
                                 GroupedHit = cleanupHit(GroupedHit);
                             });
                             // Add tooltip and intro text to JSON data
-                            $group = $(".group[data-group-key='" + Hit.Key + "']");
+                            var $group = $(".group[data-group-key='" + Hit.Key + "']");
                             Hit.Tooltip = $group.find(".tooltip").text().trim();
                             Hit.Intro = $group.find(".groupIntro").text().trim();
                             // Add button text
@@ -1909,7 +1959,7 @@ define(["jquery",
                 ElasticSearch: ElasticSearch
             };
 
-        })(this, this.document, jQuery);
+        })(window, window.document, jQuery);
 
         // TOGGLE LIST
         // SIMILAR TO ENABLETOGGLEMORE, BUT THIS WORKS FOR MULTIPLE ITEMS
@@ -1934,7 +1984,7 @@ define(["jquery",
         // triggerElem: elements that should collapse/uncollapse
         // getBtnText:     get button text from element
         function addToggleButtonAfter(elem, triggerElem, getBtnText, inSearch) {
-            var btnText = "";
+            var btnText = {};
             $(elem).each(function () {
                 var cur = $(this);
                 if (inSearch) {
@@ -1942,13 +1992,13 @@ define(["jquery",
                     btnText = {
                         text: 'Toon alle ' + cur.parent().find('label').first().data('label'),
                         alt: 'Toon minder ' + cur.parent().find('label').first().data('label')
-                    }
+                    };
                 } else {
                     // get text from data-attribute or set default value
                     btnText = {
                         text: getBtnText ? 'Toon alle ' + cur.prev('h2').attr('data-label') : 'Toon alles',
                         alt: getBtnText ? 'Toon minder ' + cur.prev('h2').attr('data-label') : 'Toon minder'
-                    }
+                    };
                 }
 
                 // add button if it doesn't exist yet
@@ -1999,8 +2049,7 @@ define(["jquery",
                 $('.aside.left').before('<div class="mobile-filter-toggle"><a href="javascript:;" class="toggle-filters" data-alt-text="Filter">Filter</a></div>');
                 // store elements
                 var filterToggle = $('.mobile-filter-toggle'),
-                    resultCount = filterToggle.children('.result-count'),
-                    filterToggleLink = filterToggle.children('.toggle-filters');
+                    resultCount = filterToggle.children('.result-count');
                 // set count text
                 var i = parseInt($('.elastic-search h1 > span').text()),
                     label = i != 1 ? ' resultaten ' : ' resultaat ';
@@ -2041,7 +2090,7 @@ define(["jquery",
             // Collapse facet checkboxes
             toggleFacetCheckboxes();
             // Add link filter facets link
-            $filterAside = $('.elastic-search .aside.left');
+            var $filterAside = $('.elastic-search .aside.left');
             $filterAside.ncoiAddScrollLink({
                 endMarkAfter: $('.elastic-search .container-fluid > .row'),
                 scrollOffset: -20, // -(20 + $('.cookies').height())
@@ -2051,9 +2100,12 @@ define(["jquery",
                 event.preventDefault();
                 var name = this.hash.replace("#", "");
                 // Scroll to toggle button, since the filters are hidden
-                $target = $("*[name='" + name + "']").prev();
-                $(window).scrollTo($target, 300, {
-                    offset: -80
+                var $target = $("*[name='" + name + "']").prev();
+                console.log("lazy loading: jquery.scrollto");
+                require(["jquery.scrollto"], function(){
+                    $(window).scrollTo($target, 300, {
+                        offset: -80
+                    });
                 });
             })
             // Start search
